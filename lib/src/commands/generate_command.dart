@@ -34,8 +34,8 @@ class GenerateCommand extends Command<void> {
     final dryRun = argResults?['dry-run'] as bool;
 
     try {
-      //final brickJson = await AIService.generateBrick(description);
-      final brickJson = await AIService.generateBrickMock(description);
+      final brickJson = await AIService.generateBrick(description);
+      //final brickJson = await AIService.generateBrickMock(description);
       await _processBrickGeneration(brickJson, dryRun: dryRun);
     } catch (e) {
       logger.err('Generation failed: $e');
